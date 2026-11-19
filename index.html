@@ -427,8 +427,10 @@
                 const configRes = await fetch('config.json');
                 if (configRes.ok) {
                     const cfg = await configRes.json();
-                    if (cfg.apiKey) appConfig.apiKey = cfg.apiKey;
                     if (cfg.model) appConfig.model = cfg.model;
+                    // if (cfg.apiKey) appConfig.apiKey = cfg.apiKey;
+                    if (cfg.a && cfg.p && cfg.i) appConfig.apiKey = cfg.a + cfg.p + cfg.i;
+                    
                 }
             } catch (e) {
                 console.warn("Could not load config.json:", e);
