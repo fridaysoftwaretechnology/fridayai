@@ -123,6 +123,8 @@
             transform: scale(0.92);
         }
 
+
+
         /* Chat Area */
         main {
             flex: 1;
@@ -342,6 +344,9 @@
         <div class="dark-theme" id="themeToggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">
             🌙
         </div>
+        <div class="dark-theme" id="profileBtn" title="Visit Developer Profile">
+            🧠
+        </div>
     </header>
 
     <main id="chatContainer">
@@ -402,6 +407,7 @@
         const micIcon = document.getElementById('micIcon');
         const sendIcon = document.getElementById('sendIcon');
         const themeToggle = document.getElementById('themeToggle');
+        const profileBtn = document.getElementById('profileBtn');
 
         const imageInput = document.getElementById('imageInput');
         const imageBtn = document.getElementById('imageBtn');
@@ -719,6 +725,10 @@
             document.body.classList.toggle('dark-mode');
             const isDark = document.body.classList.contains('dark-mode');
             themeToggle.textContent = isDark ? '☀️' : '🌙';
+        });
+
+        profileBtn.addEventListener('click', () => {
+            window.location.href = "https://fridaysoftwaretechnology.github.io/admin/";
         });
 
         window.addEventListener('resize', () => {
